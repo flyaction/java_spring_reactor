@@ -51,7 +51,7 @@ class MyInterfaceImpl implements MyInterface {
 public class Lambda {
 
     public static void main(String[] args) {
-        //声明一个函数
+        //声明一个函数 function.accept()
         BiConsumer<String,String> consumer = (a,b)->{
             System.out.println("哈哈："+a+"；呵呵："+b);
         };
@@ -59,11 +59,11 @@ public class Lambda {
 
 
 
-        //声明一个函数
+        //声明一个函数  function.apply()
         Function<String,Integer> function = (String x) -> Integer.parseInt(x);
         System.out.println(function.apply("2"));
 
-
+        //声明一个函数  supplier.get()
         Supplier<String> supplier = ()-> UUID.randomUUID().toString();
         String s = supplier.get();
         System.out.println(s);
